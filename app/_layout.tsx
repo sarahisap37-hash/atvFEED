@@ -1,24 +1,26 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import React from "react";
+import { styles } from "./";
 
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
+type Props = {
+  children: React.ReactNode;
 };
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-
+const Layout: React.FC<Props> = ({ children }) => {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <div
+      style={{
+        backgroundColor: "#f0f2f5",
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      {/* Container central */}
+      <div style={styles.container}>
+        {children}
+      </div>
+    </div>
   );
-}
+};
+
+export default Layout;
