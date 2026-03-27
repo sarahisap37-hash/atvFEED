@@ -1,26 +1,20 @@
-import React from "react";
-import { styles } from "./";
+import { ThemeProvider } from "@/hooks/useTheme";
+import { Stack } from "expo-router";
 
-type Props = {
-  children: React.ReactNode;
-};
+// Convex import
+import { ConvexProvider, ConvexReactClient } from "convex/react";
+const convex = new ConvexReactClient(process.env.EXPO_PUBLIC_CONVEX_URL!, {
+  unsavedChangesWarning: false
+})
 
-const Layout: React.FC<Props> = ({ children }) => {
+export default function RootLayout() {
   return (
-    <div
-      style={{
-        backgroundColor: "#f0f2f5",
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      {/* Container central */}
-      <div style={styles.container}>
-        {children}
-      </div>
-    </div>
-  );
-};
-
-export default Layout;
+    <ConvexProvider client={convex}>
+      <ThemeProvider>
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="(tabs)" />
+        </Stack>
+      </ThemeProvider>
+    </ConvexProvider>
+  )
+}
