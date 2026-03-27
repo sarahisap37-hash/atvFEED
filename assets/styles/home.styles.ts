@@ -42,32 +42,17 @@ export const createHomeStyles = (colors: ColorScheme) => {
       flex: 1,
     },
     title: {
-      fontSize: 32,
+      fontSize: 30,
       fontWeight: "700",
       letterSpacing: -1,
       marginBottom: 4,
-      color: "#fff",
-    },
-    title1: {
-      fontSize: 40,
-      fontWeight: "700",
-      letterSpacing: -1,
-      marginBottom: 4,
-      color: "#000000",
-      padding: 30
+      color: colors.text,
+      fontFamily: 'Dancing Script',
     },
     subtitle: {
       fontSize: 17,
       fontWeight: "500",
-      color: "#000000",
-      padding: 30
-    },
-    subtitle1: {
-      fontSize: 17,
-      fontWeight: "500",
-      color: "#000000",
-      textAlign: "center",
-      padding: 20
+      color: colors.textMuted,
     },
     progressContainer: {
       marginTop: 8,
@@ -113,9 +98,9 @@ export const createHomeStyles = (colors: ColorScheme) => {
       fontSize: 17,
       maxHeight: 120,
       fontWeight: "500",
-      backgroundColor: "#fff",
-      borderColor: "#fff",
-      color: "#000",
+      backgroundColor: colors.backgrounds.input,
+      borderColor: colors.border,
+      color: colors.text,
     },
     inputFocused: {
       borderColor: colors.primary,
@@ -245,15 +230,84 @@ export const createHomeStyles = (colors: ColorScheme) => {
     emptySubtext: {
       fontSize: 17,
       textAlign: "center",
-      paddingHorizontal: 40,
+      paddingHorizontal: 60,
       lineHeight: 24,
       color: colors.textMuted,
     },
     img: {
       width: 200,
       height: 100
-    }
+    },
+    profileCard: {
+      backgroundColor: "#fff",
+      margin: 20,
+      borderRadius: 20,
+      padding: 15,
+      shadowColor: "#000",
+      shadowOpacity: 0.1,
+      shadowRadius: 10,
+      elevation: 5,
+    },
+
+    profileTop: {
+      flexDirection: "row",
+      alignItems: "center",
+    },
+
+    avatar: {
+      width: 80,
+      height: 80,
+      borderRadius: 40,
+      backgroundColor: "#613a3a",
+    },
+
+    profileInfo: {
+      marginLeft: 15,
+    },
+
+    name: {
+      fontSize: 18,
+      fontWeight: "bold",
+    },
+
+    username: {
+      color: "#666",
+    },
+
+    stats: {
+      flexDirection: "row",
+      justifyContent: "space-around",
+      marginTop: 15,
+    },
+
+    statItem: {
+      alignItems: "center",
+    },
+
+    statNumber: {
+      fontWeight: "bold",
+      fontSize: 16,
+    },
+
+    statLabel: {
+      color: "#666",
+    },
+
+    feed: {
+      flexDirection: "row",
+      flexWrap: "wrap",
+      paddingHorizontal: 10,
+    },
+
+    post: {
+      width: "30%",
+      aspectRatio: 1,
+      backgroundColor: "#ccc",
+      margin: 5,
+      borderRadius: 10,
+    },
   });
 
   return styles;
 };
+
