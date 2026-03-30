@@ -39,7 +39,7 @@ export default function Home() {
         {/* STATS */}
         <View style={styles.stats}>
           <View style={styles.statItem}>
-            <Text style={styles.statNumber}>12</Text>
+            <Text style={styles.statNumber}>2</Text>
             <Text style={styles.statLabel}>Posts</Text>
           </View>
 
